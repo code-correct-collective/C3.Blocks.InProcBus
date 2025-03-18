@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MinVer" Version="6.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="C3.Blocks.InProcBus.Commands" />
+    <Using Include="C3.Blocks.InProcBus.Events" />
+    <Using Include="C3.Blocks.InProcBus.Queries" />
+    <Using Include="MediatR" />
+    <Using Include="Microsoft.Extensions.Logging" />
+    <Using Include="System.Diagnostics.CodeAnalysis" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="C3.Blocks.InProcBus.Tests" />
+  </ItemGroup>
+
+  <!-- MinVer Properties -->
+  <PropertyGroup>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+  </PropertyGroup>
+
+  <!-- Include files for nuget -->
+  <ItemGroup>
+    <None Include="../../c3.png" Link="c3.png" Pack="true" PackagePath="" />
+    <None Include="../../README.md" Link="README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <!-- nuget settings-->
+  <PropertyGroup>
+    <PackageId>CodeCorrectCollective.Blocks.InProcBus</PackageId>
+    <PackageIcon>c3.png</PackageIcon>
+		<Title>C3.Blocks.InProcBus</Title>
+		<Authors>Code Correct Collective</Authors>
+		<Description>A library wrapper around Mediatr to manage executing commands, queries and events.</Description>
+		<Copyright>Copyright © 2025</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/code-correct-collective/C3.Blocks.InProcBus</PackageProjectUrl>
+		<PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+		<PackageTags>C3.Blocks.InProcBus;CQRS;Mediatr;</PackageTags>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<Product>C3.Blocks.InProcBus</Product>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+		<!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+		<!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+		<!-- Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>  
+</Project>
