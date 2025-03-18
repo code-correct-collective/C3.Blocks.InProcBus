@@ -150,17 +150,17 @@ public class GetBlogByNameQueryProcessor(
 Perform the following registration code where you normally configure your application services, in `Program.cs` for example.
 
 ```csharp
-        // Register In-Proc Bus
-        services.AddInProcBus()
-            .AddCommands()
-            // Needs the command and related processor types.
-            .AddCommand<CreateBlogCommand, CreateBlogCommandProcessor>()  
-            .And()
-            .AddEvents()
-            // Needs the event and related processor types.
-            .AddEvent<BlogCreatedEvent, BlogCreatedEventProcessor>() 
-            .And()
-            .AddQueries()
-            // Needs, the query object, result type, and related processor
-            .AddQuery<GetBlogByNameQuery, Blog?, GetBlogByNameQueryProcessor>();  
+// Register In-Proc Bus
+services.AddInProcBus()
+    .AddCommands()
+    // Needs the command and related processor types.
+    .AddCommand<CreateBlogCommand, CreateBlogCommandProcessor>()  
+    .And()
+    .AddEvents()
+    // Needs the event and related processor types.
+    .AddEvent<BlogCreatedEvent, BlogCreatedEventProcessor>() 
+    .And()
+    .AddQueries()
+    // Needs, the query object, result type, and related processor
+    .AddQuery<GetBlogByNameQuery, Blog?, GetBlogByNameQueryProcessor>();  
 ```
